@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -10,10 +10,14 @@ const Navigation = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      // Auto-close mobile menu on scroll
+      if (isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isMobileMenuOpen]);
 
   const navLinks = [
     { label: "About", href: "#about" },
@@ -34,9 +38,17 @@ const Navigation = () => {
       }`}
     >
       <nav className="container mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="text-xl font-bold text-foreground">
-          JM<span className="text-muted-foreground">.</span>
+        {/* Styled Logo */}
+        <a href="#" className="group relative flex items-center gap-0.5">
+          <span className="text-xl font-extrabold tracking-tighter text-foreground relative">
+            <span className="bg-gradient-to-br from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent">
+              J
+            </span>
+            <span className="bg-gradient-to-br from-muted-foreground to-foreground bg-clip-text text-transparent">
+              M
+            </span>
+          </span>
+          <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-muted-foreground to-foreground ml-0.5 mb-0.5 self-end group-hover:scale-150 transition-transform duration-300" />
         </a>
 
         {/* Desktop nav */}
@@ -74,30 +86,36 @@ const Navigation = () => {
       </nav>
 
       {/* Mobile menu */}
-      {isMobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          className="md:hidden bg-background border-b border-border"
-        >
-          <div className="container mx-auto px-6 py-4 space-y-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="block text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
-            <Button variant="outline" size="sm" className="w-full">
-              Get in Touch
-            </Button>
-          </div>
-        </motion.div>
-      )}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden"
+          >
+            <div className="container mx-auto px-6 py-4 space-y-4">
+              {navLinks.map((link, i) => (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                  className="block text-muted-foreground hover:text-foreground transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </motion.a>
+              ))}
+              <Button variant="outline" size="sm" className="w-full">
+                Get in Touch
+              </Button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 };
