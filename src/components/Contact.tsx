@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, Youtube, Twitter, Github, Linkedin } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
+import { YouTubeIcon, XTwitterIcon, GitHubIcon, LinkedInIcon } from "./SocialIcons";
 
 const Contact = () => {
   const socials = [
-    { icon: Youtube, label: "YouTube", href: "#" },
-    { icon: Twitter, label: "Twitter", href: "#" },
-    { icon: Github, label: "GitHub", href: "#" },
-    { icon: Linkedin, label: "LinkedIn", href: "#" },
+    { icon: YouTubeIcon, label: "YouTube", href: "https://youtube.com" },
+    { icon: XTwitterIcon, label: "Twitter/X", href: "https://x.com" },
+    { icon: GitHubIcon, label: "GitHub", href: "https://github.com" },
+    { icon: LinkedInIcon, label: "LinkedIn", href: "https://linkedin.com" },
   ];
 
   return (
@@ -77,10 +78,12 @@ const Contact = () => {
               <a
                 key={social.label}
                 href={social.href}
-                className="w-12 h-12 rounded-full bg-secondary border border-border flex items-center justify-center hover:bg-accent hover:border-muted-foreground/50 transition-all duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 rounded-full bg-secondary border border-border flex items-center justify-center hover:bg-accent hover:border-muted-foreground/50 transition-all duration-300 text-muted-foreground hover:text-foreground"
                 aria-label={social.label}
               >
-                <social.icon className="w-5 h-5 text-foreground" />
+                <social.icon className="w-5 h-5" />
               </a>
             ))}
           </motion.div>
