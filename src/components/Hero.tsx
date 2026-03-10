@@ -40,9 +40,10 @@ const Hero = () => {
             <span className="pill">Co-founder of Go Tech</span>
           </motion.div>
 
-          {/* Main heading - kinetic typography */}
+          {/* Main heading - kinetic typography with Signerica Fat */}
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight"
+            className="text-5xl md:text-7xl lg:text-8xl tracking-tight"
+            style={{ fontFamily: "'Great Vibes', cursive", fontWeight: 400 }}
           >
             {nameLetters.map((letter, i) => (
               <motion.span
@@ -80,16 +81,18 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
           >
             <MagneticButton>
-              <Button variant="hero" size="lg" className="group">
-                Get in Touch
-                <motion.span
-                  className="inline-flex"
-                  animate={{ x: [0, 4, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut", repeatDelay: 1 }}
-                >
-                  <ArrowRight className="w-4 h-4" />
-                </motion.span>
-              </Button>
+              <a href="mailto:gotechmw@gmail.com?subject=Inquiry from Website">
+                <Button variant="hero" size="lg" className="group">
+                  Get in Touch
+                  <motion.span
+                    className="inline-flex"
+                    animate={{ x: [0, 4, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut", repeatDelay: 1 }}
+                  >
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.span>
+                </Button>
+              </a>
             </MagneticButton>
             <MagneticButton>
               <Button

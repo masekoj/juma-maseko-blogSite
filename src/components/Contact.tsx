@@ -48,22 +48,26 @@ const Contact = () => {
           >
             <p className="text-muted-foreground mb-4">Send me an email at</p>
             <a
-              href="mailto:hello@jumamaseko.com"
+              href="mailto:gotechmw@gmail.com"
               className="text-2xl md:text-3xl font-semibold hover:text-gradient transition-all duration-300"
             >
-              hello@jumamaseko.com
+              gotechmw@gmail.com
             </a>
           </motion.div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Button variant="hero" size="lg" className="group">
-              Get in Touch
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button variant="heroOutline" size="lg">
-              Download Resume
-            </Button>
+            <a href="mailto:gotechmw@gmail.com?subject=Inquiry from Website">
+              <Button variant="hero" size="lg" className="group">
+                Get in Touch
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </a>
+            <a href="mailto:gotechmw@gmail.com?subject=Schedule a Call Request">
+              <Button variant="heroOutline" size="lg">
+                Schedule a Call
+              </Button>
+            </a>
           </div>
 
           {/* Socials */}
