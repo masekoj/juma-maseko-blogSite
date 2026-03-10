@@ -63,9 +63,11 @@ const Navigation = () => {
 
         {/* CTA */}
         <div className="hidden md:block">
-          <Button variant="outline" size="sm">
-            Get in Touch
-          </Button>
+          <a href="mailto:gotechmw@gmail.com?subject=Inquiry from Website">
+            <Button variant="outline" size="sm">
+              Get in Touch
+            </Button>
+          </a>
         </div>
 
         {/* Mobile menu button */}
