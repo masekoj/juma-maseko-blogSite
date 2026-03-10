@@ -38,17 +38,14 @@ const Navigation = () => {
       }`}
     >
       <nav className="container mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Styled Logo */}
-        <a href="#" className="group relative flex items-center gap-0.5">
-          <span className="text-xl font-extrabold tracking-tighter text-foreground relative">
-            <span className="bg-gradient-to-br from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent">
-              J
-            </span>
-            <span className="bg-gradient-to-br from-muted-foreground to-foreground bg-clip-text text-transparent">
-              M
-            </span>
-          </span>
-          <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-muted-foreground to-foreground ml-0.5 mb-0.5 self-end group-hover:scale-150 transition-transform duration-300" />
+        {/* Profile Logo */}
+        <a href="#" className="group flex items-center gap-2">
+          <img
+            src="/images/juma-profile.jpeg"
+            alt="Juma Maseko"
+            className="w-9 h-9 rounded-full object-cover border-2 border-border group-hover:border-foreground transition-colors duration-300"
+          />
+          <span className="text-sm font-semibold text-foreground hidden sm:inline">Juma Maseko</span>
         </a>
 
         {/* Desktop nav */}
