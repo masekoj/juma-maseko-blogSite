@@ -108,9 +108,11 @@ const Navigation = () => {
                   {link.label}
                 </motion.a>
               ))}
-              <Button variant="outline" size="sm" className="w-full">
-                Get in Touch
-              </Button>
+              <a href="mailto:gotechmw@gmail.com?subject=Inquiry from Website">
+                <Button variant="outline" size="sm" className="w-full">
+                  Get in Touch
+                </Button>
+              </a>
             </div>
           </motion.div>
         )}

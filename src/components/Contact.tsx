@@ -51,7 +51,7 @@ const Contact = () => {
               href="mailto:gotechmw@gmail.com"
               className="text-2xl md:text-3xl font-semibold hover:text-gradient transition-all duration-300"
             >
-              hello@jumamaseko.com
+              gotechmw@gmail.com
             </a>
           </motion.div>
 

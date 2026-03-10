@@ -95,9 +95,11 @@ const Services = () => {
           <p className="text-muted-foreground mb-6">
             Ready to start a project or need consultation?
           </p>
-          <Button variant="hero" size="lg">
-            Schedule a Call
-          </Button>
+          <a href="mailto:gotechmw@gmail.com?subject=Schedule a Call Request">
+            <Button variant="hero" size="lg" className="hover:scale-105 transition-transform">
+              Schedule a Call
+            </Button>
+          </a>
         </motion.div>
       </div>
     </section>
