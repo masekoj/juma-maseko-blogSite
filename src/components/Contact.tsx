@@ -57,13 +57,17 @@ const Contact = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Button variant="hero" size="lg" className="group">
-              Get in Touch
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button variant="heroOutline" size="lg">
-              Download Resume
-            </Button>
+            <a href="mailto:gotechmw@gmail.com?subject=Inquiry from Website">
+              <Button variant="hero" size="lg" className="group">
+                Get in Touch
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </a>
+            <a href="mailto:gotechmw@gmail.com?subject=Schedule a Call Request">
+              <Button variant="heroOutline" size="lg">
+                Schedule a Call
+              </Button>
+            </a>
           </div>
 
           {/* Socials */}
