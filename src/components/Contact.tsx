@@ -48,7 +48,7 @@ const Contact = () => {
           >
             <p className="text-muted-foreground mb-4">Send me an email at</p>
             <a
-              href="mailto:hello@jumamaseko.com"
+              href="mailto:gotechmw@gmail.com"
               className="text-2xl md:text-3xl font-semibold hover:text-gradient transition-all duration-300"
             >
               hello@jumamaseko.com
