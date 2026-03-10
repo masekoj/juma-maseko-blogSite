@@ -40,9 +40,10 @@ const Hero = () => {
             <span className="pill">Co-founder of Go Tech</span>
           </motion.div>
 
-          {/* Main heading - kinetic typography */}
+          {/* Main heading - kinetic typography with Signerica Fat */}
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight"
+            className="text-5xl md:text-7xl lg:text-8xl tracking-tight"
+            style={{ fontFamily: "'Great Vibes', cursive", fontWeight: 400 }}
           >
             {nameLetters.map((letter, i) => (
               <motion.span
